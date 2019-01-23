@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Account List</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <div class="create-btn-container">
+      <button ion-button class="btn default large" type="button" block (click)="createAccount()">
+        Create Account
+      </button>
+    </div>
+  </ion-item>
+
+  <ion-list>
+    <button ion-item *ngFor="let item of accounts">
+      <ion-icon [name]="item.icon" item-start></ion-icon>
+      {{item.name}}
+      <div class="item-note" item-end>
+        {{item.type}}
+      </div>
+    </button>
+  </ion-list>
+
+</ion-content>

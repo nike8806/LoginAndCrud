@@ -1,0 +1,42 @@
+<ion-content padding>
+  <section fxLayout="column" fxLayoutAlign="space-between stretch">
+    <div fxLayoutAlign="center strech">
+      <form (ngSubmit)="login(email, password)" #loginForm="ngForm">
+  
+        <div fxFlex>
+          <div class="sign-up-btn-container">
+            <button ion-button class="btn default large" type="button" block (click)="signUp($event)">
+              Sign Up
+            </button>
+          </div>
+          <ion-item>
+            <ion-label>
+              Or
+            </ion-label>
+          </ion-item>
+          <ion-item class="login">
+            <ion-label floating>
+              Username
+            </ion-label>
+            <ion-input [(ngModel)]="email" name="email" required>
+            </ion-input>
+          </ion-item>
+          <ion-item class="login">
+            <ion-label  floating>
+              Password
+            </ion-label>
+            <ion-input type="password" [(ngModel)]="password" name="password" required>
+            </ion-input>
+          </ion-item>
+          <div class="login-btn-container">
+            <button ion-button class="btn default large" type="submit" block 
+            [disabled]="!loginForm.form.valid  || isMakingLoginRequest">
+              Log in
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</ion-content>
